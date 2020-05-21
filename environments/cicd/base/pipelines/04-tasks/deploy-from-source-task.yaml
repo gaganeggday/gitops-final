@@ -22,11 +22,9 @@ spec:
     - name: source
       type: git
   steps:
-  - image: ubuntu
-    script: |
+- image: my-image  # contains /bin/my-binary
+  script: |
     #!/usr/bin/env bash
-    ./dry-run.sh
-    image: quay.io/redhat-developer/k8s-kubectl
-    name: run-kubectl
+    ./dry_run.sh
     resources: {}
     workingDir: /workspace/source
