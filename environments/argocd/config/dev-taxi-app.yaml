@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     path: environments/dev/apps/taxi/base
-    repoURL: https://github.com/gaganeggday/gitops.git
+    repoURL: https://github.com/gaganeggday/taxi.git
   syncPolicy:
     automated:
       prune: true

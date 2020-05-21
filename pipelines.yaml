@@ -26,4 +26,4 @@ environments:
   name: cicd
 - argo: true
   name: argocd
-gitops_url: https://github.com/gaganeggday/gitops.git
+gitops_url: https://github.com/gaganeggday/gitops-final.git

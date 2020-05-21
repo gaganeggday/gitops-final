@@ -29,7 +29,7 @@ spec:
     - cel:
         filter: (header.match('X-GitHub-Event', 'pull_request') && body.action ==
           'opened' || body.action == 'synchronize') && body.pull_request.head.repo.full_name
-          == 'gaganeggday/gitops'
+          == 'gaganeggday/gitops-final'
     - github:
         secretRef:
           namespace: cicd
@@ -43,7 +43,7 @@ spec:
     interceptors:
     - cel:
         filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name
-          == 'gaganeggday/gitops') && body.ref.startsWith('refs/heads/master')
+          == 'gaganeggday/gitops-final') && body.ref.startsWith('refs/heads/master')
     - github:
         secretRef:
           namespace: cicd
