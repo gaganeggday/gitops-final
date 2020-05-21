@@ -22,15 +22,8 @@ spec:
     - name: source
       type: git
   steps:
-  - args:
-    - apply
-    - --dry-run=$(inputs.params.DRYRUN)
-    - -n
-    - $(inputs.params.NAMESPACE)
-    - -k
-    - $(inputs.params.PATHTODEPLOYMENT)
     command:
-    - kubectl
+    - ./dry-run.sh
     image: quay.io/redhat-developer/k8s-kubectl
     name: run-kubectl
     resources: {}
