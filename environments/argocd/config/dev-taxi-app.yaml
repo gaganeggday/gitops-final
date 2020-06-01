@@ -1,4 +1,5 @@
 apiVersion: argoproj.io/v1alpha1
+//small change
 kind: Application
 metadata:
   creationTimestamp: null
