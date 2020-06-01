@@ -28,3 +28,4 @@ environments:
         namespace: cicd
 - name: stage
 gitops_url: https://github.com/gaganeggday/gitops-final.git
+#added a small comment 
