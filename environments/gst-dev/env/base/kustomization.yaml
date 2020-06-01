@@ -1,0 +1,3 @@
+resources:
+- gst-dev-environment.yaml
+- gst-dev-rolebinding.yaml

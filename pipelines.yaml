@@ -1,0 +1,29 @@
+environments:
+- apps:
+  - name: taxi
+    services:
+    - taxi-svc
+  name: gst-dev
+  pipelines:
+    integration:
+      bindings:
+      - github-pr-binding
+      template: app-ci-template
+  services:
+  - name: taxi-svc
+    pipelines:
+      integration:
+        bindings:
+        - gst-dev-taxi-svc-binding
+        - github-pr-binding
+    source_url: https://github.com/gaganeggday/taxi.git
+    webhook:
+      secret:
+        name: github-webhook-secret-taxi-svc
+        namespace: gst-cicd
+- name: gst-stage
+- cicd: true
+  name: gst-cicd
+- argo: true
+  name: gst-argocd
+gitops_url: https://github.com/gaganeggday/gitops-final.git
