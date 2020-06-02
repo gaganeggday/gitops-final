@@ -1,0 +1,30 @@
+config:
+  ArgoCDConfig:
+    namespace: argocd
+  PipelineConfig:
+    namespace: cicd
+environments:
+- apps:
+  - name: taxi
+    services:
+    - taxi-svc
+  name: dev
+  pipelines:
+    integration:
+      bindings:
+      - github-pr-binding
+      template: app-ci-template
+  services:
+  - name: taxi-svc
+    pipelines:
+      integration:
+        bindings:
+        - dev-taxi-svc-binding
+        - github-pr-binding
+    source_url: https://github.com/gaganeggday/taxi.git
+    webhook:
+      secret:
+        name: github-webhook-secret-taxi-svc
+        namespace: cicd
+- name: stage
+gitops_url: https://github.com/gaganeggday/gitops-final.git
