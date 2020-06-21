@@ -75,3 +75,4 @@ rules:
   - get
   - list
   - watch
+  - patch
